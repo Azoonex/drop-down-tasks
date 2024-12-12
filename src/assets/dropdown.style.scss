@@ -1,0 +1,16 @@
+@import "./variables";
+
+.style_trigger {
+    cursor: pointer;
+    border: none;
+    border-radius: $rounded-lg;
+    background-color: transparent;
+    border: 1px solid $primary;
+    padding-inline: 5px;
+    padding-block: 7px;
+    outline: 2px solid $ligth-blue;
+    font-size: $text-lg;
+    display: flex;
+    gap: 100px;
+
+}

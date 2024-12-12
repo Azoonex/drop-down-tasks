@@ -1,10 +1,13 @@
-import "./assets/restcss.scss";
-
+import "../src/assets/home.style.scss";
+import DropDown from "./components/drop-down";
+("./components/drop-down");
 function App() {
     return (
-        <div>
-            <h1>hello world</h1>
-        </div>
+        <section className='container'>
+            <DropDown.DropTrigger>
+                ssssss <span>🔽</span>
+            </DropDown.DropTrigger>
+        </section>
     );
 }
 
