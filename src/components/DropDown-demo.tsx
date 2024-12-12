@@ -7,7 +7,7 @@ import { TypeDataDropDwon } from "../types/types";
 const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
     const { data } = props;
     const [isOpen, setIsOpen] = useState<boolean>(true);
-    const [onselect, setOnSelect] = useState<string | null>("");
+    const [onselectLabel, setOnSelectLabel] = useState<string | null>("");
 
     return (
         <DropDown.DropRoot>
@@ -15,7 +15,7 @@ const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
                 disabled={data.length < 0}
                 className={isOpen && data.length > 0 ? "open" : undefined}
                 onClick={() => setIsOpen((prev) => !prev)}>
-                {!onselect ? "DropDown" : onselect}{" "}
+                {!onselectLabel ? "DropDown" : onselectLabel}{" "}
                 <span>
                     <img
                         width={20}
@@ -36,14 +36,14 @@ const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
                             key={i.id}
                             onClick={() => {
                                 if (!onselect) {
-                                    setOnSelect(i.label);
+                                    setOnSelectLabel(i.label);
                                 } else {
-                                    setOnSelect(null);
+                                    setOnSelectLabel(null);
                                 }
                             }}>
                             {i.label}
                             <span>
-                                {i.label === onselect ? "✅" : undefined}
+                                {i.label === onselectLabel ? "✅" : undefined}
                             </span>
                         </DropDown.DropItem>
                     ))}
