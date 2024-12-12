@@ -1,4 +1,4 @@
-import "../assets/dropdown.style.scss";
+import "../../assets/dropdown.style.scss";
 
 import React, { ComponentPropsWithRef } from "react";
 
@@ -34,10 +34,16 @@ const DropItem = React.forwardRef<HTMLLIElement, ComponentPropsWithRef<"li">>(
 DropItem.displayName = "DropItem";
 
 const dropContent = React.forwardRef<
-    HTMLLIElement,
-    ComponentPropsWithRef<"li">
+    HTMLDivElement,
+    ComponentPropsWithRef<"div">
 >(function dropContent({ className, ...props }, ref) {
-    return <li className={`${className} style_content`} {...props} ref={ref} />;
+    return (
+        <div
+            className={`${className} style_content custom-scroll`}
+            {...props}
+            ref={ref}
+        />
+    );
 });
 
 dropContent.displayName = "DropContent";

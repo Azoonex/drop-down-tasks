@@ -1,16 +1,72 @@
 @import "./variables";
 
+.style_root {
+    position: relative;
+}
+
 .style_trigger {
-    cursor: pointer;
     border: none;
     border-radius: $rounded-lg;
     background-color: transparent;
     border: 1px solid $primary;
-    padding-inline: 5px;
+    width: 320px;
+    padding-inline: 15px;
     padding-block: 7px;
-    outline: 2px solid $ligth-blue;
     font-size: $text-lg;
+
     display: flex;
+    justify-content: space-between;
     gap: 100px;
 
+    .checkOpen {
+        transition: 0.25s;
+    }
+
+    .close_content {
+        transform: rotate(180deg);
+    }
+}
+
+.open {
+    outline: 2px solid $ligth-blue;
+}
+
+.style_content {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    z-index: 20;
+    top: 115%;
+    border-radius: $rounded-lg 10px 6px $rounded-lg;
+    overflow-y: auto;
+    padding: $padding-sm;
+    border: 1px solid $secondery;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: 1s;
+    box-shadow: $ligth-blue 0px 8px 24px;
+
+    .style_item {
+        list-style: none;
+        width: 100%;
+        padding: $padding-xs;
+        font-size: $text-md;
+        border-radius: $rounded-sm;
+        padding-inline: $padding-sm;
+        padding-block: $padding-xs;
+        cursor: context-menu;
+
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:hover {
+            background-color: $ligth-blue;
+        }
+    }
 }
