@@ -13,7 +13,7 @@ const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
         <DropDown.DropRoot>
             <DropDown.DropTrigger
                 disabled={data.length < 0}
-                className={isOpen && data.length < 0 ? "open" : undefined}
+                className={isOpen && data.length > 0 ? "open" : undefined}
                 onClick={() => setIsOpen((prev) => !prev)}>
                 {!onselect ? "DropDown" : onselect}{" "}
                 <span>
