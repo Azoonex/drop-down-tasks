@@ -50,9 +50,9 @@ const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
               key={i.id}
               onClick={() => {
                 if (!onselectLabel) {
-                  setOnSelectLabel((prev) => (prev = i.label));
+                  setOnSelectLabel(i.label);
                 } else {
-                  setOnSelectLabel((prev) => prev = '');
+                  setOnSelectLabel('');
                 }
               }}
             >
