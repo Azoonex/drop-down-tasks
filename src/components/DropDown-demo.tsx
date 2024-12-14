@@ -6,7 +6,7 @@ import DropDown from "./ui/drop-down";
 
 const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
   const { data } = props;
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [onselectLabel, setOnSelectLabel] = useState<string | null>(null);
 
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -19,7 +19,7 @@ const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
     };
     document.addEventListener("click", handleClickOutside, true);
     return () => {
-      document.removeEventListener("click", handleClickOutside, true);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [isOpen]);
 
