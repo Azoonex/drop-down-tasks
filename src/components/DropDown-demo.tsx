@@ -23,7 +23,6 @@ const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
     };
   }, [isOpen]);
 
-
   return (
     <DropDown.DropRoot ref={rootRef}>
       <DropDown.DropTrigger
@@ -49,10 +48,10 @@ const DropDownDemo: React.FC<TypeDataDropDwon> = (props) => {
             <DropDown.DropItem
               key={i.id}
               onClick={() => {
-                if (!onselectLabel) {
-                  setOnSelectLabel(i.label);
+                if (i.label === onselectLabel) {
+                  setOnSelectLabel("");
                 } else {
-                  setOnSelectLabel('');
+                  setOnSelectLabel(i.label);
                 }
               }}
             >
