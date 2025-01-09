@@ -1,6 +1,7 @@
 import "../src/assets/dropdown.style.scss";
 import "../src/assets/home.style.scss";
 import DropDownDemo from "./components/DropDown-demo";
+import {TabContainer} from "./components/ui/Tab.tsx";
 
 ("./components/drop-down");
 
@@ -17,9 +18,14 @@ function App() {
     ];
 
     return (
+        <>
+        <TabContainer />
+
         <section className='container'>
             <DropDownDemo data={data} />
+
         </section>
+        </>
     );
 }
 
